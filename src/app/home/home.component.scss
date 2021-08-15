@@ -1,0 +1,139 @@
+.cards{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px;
+  height: 35ch;
+  width: 25ch;
+  padding: 2rem ;
+  // background: #282828;
+  border:2px solid #9E4F60;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: transform 500ms ease;
+  overflow: hidden;
+
+}
+
+.menu-title{
+  font-family: Monospace ;
+  font-style: initial;
+  font-size: 1.2em;
+  color: white;
+
+  text-align: center;
+
+  transform: translateY(25%);
+
+  transition : 500ms ease;
+}
+
+.description{
+  opacity:0;
+}
+
+.cards:hover .menu-title{
+  transform:translateY(-40%);
+  width:100%;
+
+}
+
+.cards:hover .description{
+  opacity:1;
+}
+
+.cards:hover{
+  // font-size: 16px;
+  transform: scale(1.05);
+  cursor: pointer;
+  transition:0.1s ease-in-out;
+  box-shadow: 0 5px 5px -3px rgb(0 0 0 / 20%), 0 8px 10px 1px rgb(0 0 0 / 14%), 0 3px 14px 2px rgb(0 0 0 / 12%);
+  border-bottom :10px solid #0A88EC;
+  margin-bottom:-10px;
+  background:linear-gradient(
+    hsl(0 0% 0% / 0),
+    hsl(20 0% 0% / 0.3),
+    hsl(0 0% 0% / 1)
+  );
+
+}
+
+.cards:hover .cards::after{
+  transform: scaleX(1);
+}
+
+.cards:hover img{
+  opacity: 0.3;
+}
+.container{
+  position:absolute;
+  z-index: 600;
+  height:100%;
+  width:100%;
+
+}
+
+
+img{
+  max-height: 70%;
+}
+
+.name{
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+.home-container{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap ;
+  justify-content: center;
+  padding-top:1%
+}
+.SWLogo{
+  // position:absolute;
+  // z-index: 7;
+  width:100%;
+  animation-name:loading-logo;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes loading-logo {
+  0%{transform: scale(1);opacity: 0.5;}
+  50%{transform: scale(1.2);opacity: 1;}
+  100%{transform: scale(1);opacity: 0.5;}
+}
+
+.loadingBlock{
+  color:white;
+  position:absolute;
+  top: 35%;
+  margin: auto;
+  left: 0;
+  right: 0;
+  width: 20%;
+
+}
+#loadingSubtitle{
+  text-align: center;
+  margin-top:20px;
+  font-size:1.5em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#SWLogoMain{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+  margin-top: 3%;
+}
+
+.objectIcon{
+  color:white;
+  margin-top:-20px;
+  margin-bottom: 5px;
+}

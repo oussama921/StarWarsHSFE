@@ -1,0 +1,110 @@
+<div id="nameContainer">
+  <div id="name">{{spaceshipInfos.name}}</div>
+</div>
+
+<div class="container">
+
+  <div id="spaceshipInfos">
+
+
+    <table>
+      <tr>
+        <td>MGLT</td>
+        <td>{{spaceshipInfos.MGLT}}</td>
+      </tr>
+
+      <tr>
+        <td>Cargo Capacity</td>
+        <td>{{spaceshipInfos.cargo_capacity}}</td>
+      </tr>
+
+      <tr>
+        <td>Consumables</td>
+        <td>{{spaceshipInfos.consumables}}</td>
+      </tr>
+
+      <tr>
+        <td>Cost in credits</td>
+        <td>{{spaceshipInfos.cost_in_credits}}</td>
+      </tr>
+
+
+      <tr>
+        <td>Created</td>
+        <td>{{spaceshipInfos.created | date:'yyyy-MM-dd'}}</td>
+      </tr>
+
+      <tr>
+        <td>Crew</td>
+        <td>{{spaceshipInfos.crew }}</td>
+      </tr>
+
+      <tr>
+        <td>Edited</td>
+        <td>{{spaceshipInfos.edited | date:'yyyy-MM-dd'}}</td>
+      </tr>
+
+      <tr>
+        <td>Hyperdrive Rating</td>
+        <td>{{spaceshipInfos.hyperdrive_rating}}</td>
+      </tr>
+
+
+      <tr>
+        <td>Length</td>
+        <td>{{spaceshipInfos.length }}</td>
+      </tr>
+
+      <tr>
+        <td>Manufacturer</td>
+        <td>{{spaceshipInfos.manufacturer }}</td>
+      </tr>
+
+      <tr>
+        <td>Max Atmosphering speed</td>
+        <td>{{spaceshipInfos.max_atmosphering_speed }}</td>
+      </tr>
+
+      <tr>
+        <td>Model</td>
+        <td>{{spaceshipInfos.model }}</td>
+      </tr>
+
+      <tr>
+        <td>Passengers</td>
+        <td>{{spaceshipInfos.passengers }}</td>
+      </tr>
+
+      <tr>
+        <td>Starship Class</td>
+        <td>{{spaceshipInfos.starship_class }}</td>
+      </tr>
+
+    </table>
+    <div id="pilotsTitle" *ngIf="pilots.length>0">Pilots : </div>
+    <div *ngIf="pilots.length>0" class="imagesZone">
+
+      <div
+        *ngFor="let pilot of pilots"
+        >
+          <img
+            [src]="pilot.imgUrl"
+            class="pilotLogo"
+            (click)="showPilotDetails(pilot)"
+            [matTooltip]="pilot.name"/>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="spaceshipImg">
+    <div *ngIf="hasObj" #scene id='scene'>
+    </div>
+
+    <img *ngIf="!hasObj"   [src]="spaceshipInfos.imgUrl"/>
+
+  </div>
+
+</div>

@@ -1,0 +1,107 @@
+<div id="nameContainer">
+  <div id="name">{{pilotInfos.name}}</div>
+</div>
+
+<div class="container">
+
+  <div id="pilotInfos">
+    <table>
+
+      <tr>
+        <td>Height</td>
+        <td>{{pilotInfos.height}}</td>
+      </tr>
+
+      <tr>
+        <td>Mass</td>
+        <td>{{pilotInfos.mass}}</td>
+      </tr>
+
+      <tr>
+        <td>Hair color</td>
+        <td>{{pilotInfos.hair_color}}</td>
+      </tr>
+
+      <tr>
+        <td>Skin color</td>
+        <td>{{pilotInfos.skin_color}}</td>
+      </tr>
+
+      <tr>
+        <td>Eye color</td>
+        <td>{{pilotInfos.eye_color}}</td>
+      </tr>
+
+      <tr>
+        <td>Birth year</td>
+        <td>{{pilotInfos.birth_year}}</td>
+      </tr>
+
+      <tr>
+        <td>Gender</td>
+        <td>{{pilotInfos.gender}}</td>
+      </tr>
+
+      <tr>
+        <td>Homeworld</td>
+        <td>{{pilotInfos.homeworld}}</td>
+      </tr>
+
+      <tr>
+        <td>Created</td>
+        <td>{{pilotInfos.created | date:'yyyy-MM-dd'}}</td>
+      </tr>
+
+      <tr>
+        <td>Edited</td>
+        <td>{{pilotInfos.edited | date:'yyyy-MM-dd'}}</td>
+      </tr>
+    </table>
+
+    <div *ngIf="filmsList.length>0">Films :</div>
+    <div *ngIf="filmsList.length>0" class="imagesZone">
+      <div
+        *ngFor="let film of filmsList">
+        <img
+          [matTooltip]="film.title"
+          [src]="film.imgUrl"
+          class="pilotLogo"
+        />
+      </div>
+    </div>
+
+    <div *ngIf="vehiclesList.length>0">Vehicles : </div>
+    <div *ngIf="vehiclesList.length>0" class="imagesZone">
+      <div
+        *ngFor="let vehicle of vehiclesList">
+        <img
+          [matTooltip]="vehicle.name"
+          [src]="vehicle.imgUrl"
+          class="pilotLogo"
+        />
+      </div>
+    </div>
+
+
+    <div *ngIf="starshipsList.length>0">Starships : </div>
+    <div *ngIf="vehiclesList.length>0" class="imagesZone">
+      <div
+        *ngFor="let starship of starshipsList">
+        <img
+          [matTooltip]="starship.name"
+          [src]="starship.imgUrl"
+          class="pilotLogo"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="pilotImg">
+    <img
+    [src]="pilotInfos.imgUrl"
+      id="pilotHomeImg"
+    />
+
+  </div>
+
+</div>

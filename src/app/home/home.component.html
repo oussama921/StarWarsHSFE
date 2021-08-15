@@ -1,0 +1,42 @@
+<div class="loadingBlock" *ngIf="isLoadingData">
+  <img class="SWLogo" src="assets/images/Star_Wars_Logo.png"/>
+  <div id="loadingSubtitle"> Loading...</div>
+</div>
+
+<div *ngIf="!isLoadingData" class="container " >
+
+  <img id="SWLogoMain" src="assets/images/Star_Wars_Logo.png"/> <br/>
+
+  <div class="home-container">
+    <!-- Cards -->
+    <div
+      class="cards"
+      *ngFor="let element of spaceshipList "
+      (click)="openSpaceshipDetailsDialog(element)"
+    >
+
+      <mat-icon *ngIf="starshipsExistingObjectNamesTable.includes(element.name)" class="objectIcon">3d_rotation</mat-icon>
+      <img
+        [src]="element.imgUrl"
+      />
+
+      <div class="menu-title">
+        <div class="name">{{ element.name }}</div>
+        <div class="description">
+          <div>
+            Model : {{element.model}}
+          </div>
+          <div>
+            Manufacturer : {{element.manufacturer}}
+          </div>
+          <div>
+            Crew : {{element.crew}}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
